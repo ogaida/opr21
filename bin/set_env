@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# load with `source ./set_env`
+
+if [ -z "$ONEPASSWORD" ]
+then
+  read -s -p "password for 1password ? " ONEPASSWORD
+  export ONEPASSWORD
+fi
