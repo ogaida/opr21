@@ -5,7 +5,7 @@ require "json"
 
 class Opr21
 
-  # set initial credentials if required...  
+  # set initial credentials if required.... 
   CREDENTIALS={
       :domain => "mydom.1password.eu",
       :email => "myuser@mydom.com",
