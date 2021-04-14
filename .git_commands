@@ -1,0 +1,8 @@
+# siehe https://rogerdudler.github.io/git-guide/index.de.html
+git rm opr21-*.gem
+# vi opr21.gemspec # change version
+gem build opr21.gemspec
+gem push opr21-*gem
+git add opr21-*.gem README.md lib/opr21.rb bin/set_env change_log.md
+git commit -m "changed some comments"
+git push origin master
