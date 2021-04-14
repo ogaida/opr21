@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = 'opr21'
-  spec.version = '0.1'
+  spec.version = '0.1.1'
   spec.date = '2021-04-14'
   spec.summary = "yet another onepassword wrapper in 2021"
   spec.description = "get your items from 1password"
