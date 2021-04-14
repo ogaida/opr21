@@ -11,7 +11,7 @@ unless ENV.has_key?"ONEPASSWORD"
 else
     load "opr21.rb"
     op = Opr21.new(ENV["ONEPASSWORD"], {:domain => "your-domain", :email => "your-email", :secret => "your-secret"})
-    opv = op.getItem your-item-title
+    opv = op.getItem "your-item-title"
     puts opv["website"]
 end
 ```
