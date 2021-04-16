@@ -5,7 +5,7 @@ require "json"
 
 class Opr21
 
-  # set initial credentials if required.... 
+  # set initial credentials if you want to ... 
   CREDENTIALS={
       :domain => "mydom.1password.eu",
       :email => "myuser@mydom.com",
@@ -31,10 +31,10 @@ class Opr21
     JSON.parse(output)
   end
 
-  # gibt die Werte des ersten Elementes mit entsprechenden Namen
+  # gibt die Werte des ersten Elementes mit entsprechenden Namen (exakter Match case ignore)
   def getItem(name, fields = "website,username,title,password", vault = "Private")
     all = self.op "list", "items", "--vault", vault
-    arr = all.select{|i| i["overview"]["title"] =~ /#{name}/i}
+    arr = all.select{|i| i["overview"]["title"].casecmp(name) == 0 }
     if arr.class == Array
         self.op "get", "item", arr[0]["uuid"], "--fields", fields
     else
@@ -43,9 +43,10 @@ class Opr21
   end  
 
   # gibt eine Liste von item.titles aus die matchen
-  def getItemList(regex, vault = "Private")
+  def getItemList(name, vault = "Private")
+    regex = %r{#{name}}i
     all = self.op "list", "items", "--vault", vault
-    arr = all.select{|i| i["overview"]["title"] =~ /#{regex}/i}
+    arr = all.select{|i| regex.match?(i["overview"]["title"])}
     return_arr = []
     if arr.class == Array
         arr.each do |item|

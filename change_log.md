@@ -3,3 +3,7 @@
 ## 0.1
 
 - initial
+
+## 0.2
+
+- regex match changed
