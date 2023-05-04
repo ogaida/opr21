@@ -17,6 +17,9 @@ else
 end
 ```
 
+with the fuction `getItemList(string, vault)` you can search for your entry. it returns an array of the entry titles.
+
+
 # installation
 
 just install the gem:
