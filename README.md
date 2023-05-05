@@ -1,3 +1,6 @@
+# deprecated
+
+the op cli changed totaly, so this does not work any more.
 
 # yet another onepassword wrapper in 2021
 
